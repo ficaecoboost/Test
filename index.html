@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+</head>
+<body>
+    <h2>Podaci o narudžbini</h2>
+    <form action="send_mail.php" method="post">
+        <label for="licensePlate">Tablice:</label><br>
+        <input type="text" id="licensePlate" name="licensePlate" required><br><br>
+
+        <label for="carBrand">Marka automobila:</label><br>
+        <input type="text" id="carBrand" name="carBrand" required><br><br>
+
+        <label for="name">Ime:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <input type="submit" value="Pošalji">
+    </form>
+</body>
+</html>
