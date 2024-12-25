@@ -1,31 +1,989 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Form</title>
-</head>
-<body>
-    <h2>Podaci o narudžbini</h2>
-    <form action="https://formsubmit.co/ficolica@gmail.com" method="POST">
-        <label for="name">Ime:</label><br>
-        <input type="text" name="name" required><br><br>
-        <label for="email">Email:</label><br>
-        <input type="email" name="email" required><br><br>
-        <label for="licensePlate">Tablice:</label><br>
-        <input type="text" id="licensePlate" name="licensePlate" required><br><br>
+<html lang="sr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Osnovni Meta Tagovi -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <label for="carBrand">Marka automobila:</label><br>
-        <input type="text" id="carBrand" name="carBrand" required><br><br>
+<title>SAS Securtiy</title>
+<meta name="description" content="SAS Security pruža integrisana rešenja u oblasti bezbednosti, mrežnih sistema i kontrole pristupa. Naša napredna tehnologija osigurava maksimalnu sigurnost i efikasnost za domove i poslovne objekte.">
+<meta name="keywords" content="SAS Security, bezbednosni sistemi, video nadzor, alarmni sistemi, kontrola pristupa, mrežni sistemi, parking rampe, sigurnosna rešenja, IT infrastruktura, Beograd">
+<meta name="author" content="SAS Security">
+<meta name="robots" content="index, follow">
 
-        <label for="phone">Broj telefona</label><br>
-        <input type="text" id="phone" name="phone"><br><br>
+<!-- Open Graph Meta Tagovi -->
+<meta property="og:title" content="SAS Security - Integrisana Bezbednosna i Mrežna Rešenja">
+<meta property="og:description" content="Inovativna rešenja za sigurnost i IT mreže. Pružamo napredne alarmne sisteme, video nadzor, kontrolu pristupa i mrežne sisteme za domove i poslovne objekte.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.example.com">
+<meta property="og:image" content="https://www.example.com/images/sas-security-main.jpg">
+<meta property="og:locale" content="sr_RS">
 
+<!-- Twitter Meta Tagovi -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SAS Security - Integrisana Bezbednosna i Mrežna Rešenja">
+<meta name="twitter:description" content="Saznajte više o naprednim sigurnosnim i IT rešenjima SAS Security-a, uključujući alarmne sisteme, video nadzor, kontrolu pristupa i mrežnu infrastrukturu.">
+<meta name="twitter:image" content="https://www.example.com/images/sas-security-main.jpg">
+<meta name="twitter:site" content="@SASSecurity">
+
+<!-- Canonical Link -->
+<link rel="canonical" href="https://www.example.com">
+
+<!-- Favicon -->
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.pngg">
+<link rel="icon" type="image/favicon-32x32" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/favicon-16x16" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "SAS Security",
+  "url": "https://www.example.com",
+  "logo": "https://www.example.com/images/sas-security-logo.png",
+  "description": "SAS Security pruža integrisana rešenja za bezbednost, mrežne sisteme i kontrolu pristupa. Specijalizovani smo za alarmne sisteme, video nadzor, Wi-Fi infrastrukturu i parking barijere.",
+  "sameAs": [
+    "https://www.facebook.com/SASSecurity",
+    "https://twitter.com/SASSecurity",
+    "https://www.linkedin.com/company/sas-security"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ulica i broj",
+    "addressLocality": "Beograd",
+    "addressRegion": "RS",
+    "postalCode": "11000",
+    "addressCountry": "RS"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+381-XX-XXXXXXX",
+    "contactType": "Customer Service"
+  }
+}
+</script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap" rel="stylesheet">
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="css/font-awesome/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" href="css/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/swiper/swiper.min.css">
+    <link rel="stylesheet" href="css/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="css/nice-select/nice-select.css">
+    <!-- Template Style -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <!--=================================
+    cursor -->
+    <div id="cursor">
+      <div class="cursor__circle"></div>
+    </div>
+    <!--=================================
+    cursor -->
+    
+    <div id="page" class="main">
+
+      <!--=================================
+      Header -->
+      <header class="header header-default header-absolute header-sticky">
+        <div class="header-inner">
+          <div class="site-logo">
+            <a class="navbar-brand" href="index.html"><img class="img-fluid" style="max-width: 50%;" src="images/logo/navlogo INVERT (1).png" alt="logo" /></a>
+          </div>
+          <div class="site-menu d-none d-xl-block">
+            <ul class="main-menu">
+              <li class="nav-item active"><a class="nav-link" href="https://www.sas-security.rs/">S A S</a>
+              
+              </li>
+              <li class="nav-item"><a class="nav-link" href="security.html">Security <i class="fa-solid"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="network.html">Network <i class="fa-solid"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="parking.html">Parking <i class="fa-solid"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="#"> Contact <i class="fa-solid"></i></a></li>
+
+            </ul>
+          </div>
+
+          <div class="site-action d-none d-xl-block">
+            <div class="action-hamburger">
+              <a class="hamburger" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <span class="hamburger-container">
+                  <span class="hamburger-inner"></span>
+                  <span class="hamburger-hidden"></span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="mobile-action d-block d-xl-none">
+            <div class="mobile-hamburger">
+              <a class="hamburger" href="#" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
+                <span class="hamburger-container">
+                  <span class="hamburger-inner"></span>
+                  <span class="hamburger-hidden"></span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!--=================================
+      Main Menu OffCanvas -->
+      <div class="offcanvas main-menu-offcanvas offcanvas-end" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvasLabel">
+        <div class="offcanvas-header">
+          <a id="menuOffcanvasLabel" class="navbar-brand" href="index.html"><img class="img-fluid" src="images/logo.svg" alt="logo" /></a>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="body-inner">
+            <ul class="main-menu">
+              <li class="nav-item active"><a class="nav-link" href="https://www.sas-security.rs/">S A S<i class="fa-solid fa-chevron-down"></i></a>
+              
+              </li>
+              <li class="nav-item"><a class="nav-link" href="security.html">Security <i class="fa-solid"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="network.html">Network <i class="fa-solid"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="parking.html">Parking <i class="fa-solid"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="#"> Contact <i class="fa-solid"></i></a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      
+        <!--=================================
+        Main Banner -->
+        <div class="main-banner main-banner-2">
+          <div class="banner-inner">
+            <img class="img-fluid banner-bg" src="images/security/laptop.webp" alt="#">
+            <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="banner-conent">
+                  <span class="sub-title"><img class="img-fluid" src="images/subtitle-icon.png" alt=""> SAS Security</span>
+                  <h1 class="title mb-2 mb-md-4">SAS</h1>
+                  <div class="conent">
+                    <p class="small-text">Mi pružamo napredna rešenja za bezbednost, video nadzor, kontrolu pristupa i mrežnu infrastrukturu. Naša inovativna tehnologija i stručnost osiguravaju zaštitu vašeg doma, poslovanja i mreže, pružajući vam mir i sigurnost 24/7.</p>
+                    <h1 class="title"> Security</h1>
+                  </div>
+
+                  <div class="row justify-content-start align-items-center">
+                  <div class="col-lg-3 col-md-4 col-sm-4 order-sm-0 order-2">
+                    <a class="btn btn-effect" href="#">
+                      <span>Upit o saradnji</span>
+                      <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_59_253)"><path d="M19.4854 11.4293L17.0513 12.221C13.1214 13.4993 10.3036 16.9595 9.84784 21.0668C9.49371 16.981 6.71926 13.5081 2.81255 12.2604L0.210283 11.4293" stroke="white" stroke-width="2"/><path d="M9.83594 20.8889L9.83594 0" stroke="white" stroke-width="2"/></g><defs><clipPath id="clip0_59_253"><rect width="21.3333" height="20" fill="white" transform="translate(20) rotate(90)"/></clipPath></defs></svg>
+                    </a>
+                  </div>
+                 <div class="col-lg-3 col-md-4 col-sm-5 order-sm-0 order-1">
+                    <div class="counter counter-style-1 pt-0">
+                      <div class="counter-number"><span class="timer mb-0" data-to="100" data-speed="2000">100</span><span class="suffix">%</span></div>
+                      <div class="counter-info"><span class="counter-title">Zadovoljnih Klijenata</span></div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-wrapper">
+          <!--=================================
+          Case Studies -->
+          <section class="space-ptb z-index-2 bg-black">
+            <div class="container-fluid">
+              <div class="row justify-content-center">
+                <div class="col-md-10">
+                  <div class="section-title text-center">
+                    <span class="sub-title justify-content-center"><img class="img-fluid" src="images/subtitle-icon.png" alt=""> Grane poslovanja </span>
+                    <h2 class="title"> Pronađite rešenje za Vaš problem.</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-lg-12">
+                  <div class="case-studies-grid grid-wrapper grid-xl-3 grid-md-2 grid-sm-1">
+                    <div class="case-studies-wrapper case-studies-style-1">
+                      <div class="case-studies-img">
+                        <img class="img-fluid" src="images/security/secureVerrt.webp" alt="" />
+                        <a href="#" class="category">Bezbednost</a>
+                      </div>
+                      <div class="case-studies-info">
+                        <div class="case-studies-info-inner">
+                          <h3 class="case-studies-title"><a href="#">SAS Security</a></h3>
+                           <div class="case-studies-content">
+                            <div class="case-studies-description">Od doma, do komercijalnog prostora, bezbedni ste u svakom trenutku.</div>
+                           </div>
+                           <div class="case-studies-link">
+                              <a class="btn-arrow" href="security.html"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_923_134)"><path d="M8.70801 0.959961L9.29825 2.7665C10.2512 5.68321 12.8308 7.77453 15.8928 8.1128C12.8468 8.37564 10.2578 10.4348 9.3276 13.3343L8.70801 15.2657" stroke="inherit" stroke-width="2"/><path d="M15.7602 8.12158H0.1875" stroke="inherit" stroke-width="2"/></g><defs><clipPath id="clip0_923_134"><rect width="15.904" height="14.8437" fill="inherit" transform="translate(0.1875 0.578125)"/></clipPath></defs></svg></a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="case-studies-wrapper case-studies-style-1">
+                      <div class="case-studies-img">
+                        <img class="img-fluid" src="images/network/serverkablovi.webp" alt="" />
+                        <a href="#" class="category">Mreža</a>
+                      </div>
+                      <div class="case-studies-info">
+                        <div class="case-studies-info-inner">
+                          <h3 class="case-studies-title"><a href="#">SAS Network</a></h3>
+                           <div class="case-studies-content">
+                            <div class="case-studies-description">Bilo da je u pitanju mrežna oprema ili mrežno rešenje po meri mi smo pravi odgovor.</div>
+                           </div>
+                           <div class="case-studies-link">
+                              <a class="btn-arrow" href="network.html"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_923_134)"><path d="M8.70801 0.959961L9.29825 2.7665C10.2512 5.68321 12.8308 7.77453 15.8928 8.1128C12.8468 8.37564 10.2578 10.4348 9.3276 13.3343L8.70801 15.2657" stroke="inherit" stroke-width="2"/><path d="M15.7602 8.12158H0.1875" stroke="inherit" stroke-width="2"/></g><defs><clipPath id="clip0_923_134"><rect width="15.904" height="14.8437" fill="inherit" transform="translate(0.1875 0.578125)"/></clipPath></defs></svg></a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="case-studies-wrapper case-studies-style-1">
+                      <div class="case-studies-img">
+                        <img class="img-fluid" src="images/parking/parkingHome.webp" alt="" />
+                        <a href="#" class="category">Parking</a>
+                      </div>
+                      <div class="case-studies-info">
+                        <div class="case-studies-info-inner">
+                          <h3 class="case-studies-title"><a href="#">SAS Parking </a></h3>
+                           <div class="case-studies-content">
+                            <div class="case-studies-description">Komercijalna rešenja u sferi automatizacije i digitalizacija parking sistema.</div>
+                           </div>
+                           <div class="case-studies-link">
+                              <a class="btn-arrow" href="parking.html"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_923_135)"><path d="M8.70801 0.959961L9.29825 2.7665C10.2512 5.68321 12.8308 7.77453 15.8928 8.1128C12.8468 8.37564 10.2578 10.4348 9.3276 13.3343L8.70801 15.2657" stroke="inherit" stroke-width="2"/><path d="M15.7602 8.12158H0.1875" stroke="inherit" stroke-width="2"/></g><defs><clipPath id="clip0_923_135"><rect width="15.904" height="14.8437" fill="inherit" transform="translate(0.1875 0.578125)"/></clipPath></defs></svg></a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--=================================
+          Case Studies -->
+
+
+          <!--=================================
+          WHAT WE DO -->
+           <section class="space-ptb">
+            <div class="container">
+              <div class="row">
+                <div class="col-xxl-7 col-lg-8">
+                  <div class="section-title mb-lg-0">
+                    <span class="sub-title"><img class="img-fluid" src="images/subtitle-icon.png" alt=""> WHAT WE DO</span>
+                    <h2 class="title mb-0">Bavimo se našim klijentima i u tome smo najbolji.</h2>
+                  </div>
+                </div>
+                 <div class="col-xxl-5 col-lg-4 align-self-end">
+                  <p class="mb-0 ps-xxl-5">Odnos sa klijentima je najbitniji faktor u svakoj industriji a pogotovo tamo gde su usluge ključni deo poslovanja.
+                    SAS Svoej iskustvo i poverenje gradi godinama uz mnoštvo uspešnih projekata i nebrojenih zadovoljnih klijenata
+                  </p>
+                 </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="services grid-wrapper grid-xl-4 grid-md-2 grid-sm-1 grid-gap-0  mt-5 pt-lg-4">
+            
+              
+                   </div>
+                   
+                  </div>
+                  <div class="row mt-5 pt-lg-5 justify-content-center">
+                    <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
+                      <div class="counter counter-style-2 h-100">
+                        <div class="counter-number"><span class="timer mb-0" data-to="5" data-speed="2000">5</span><span class="suffix">M</span></div>
+                        <div class="counter-info"><span class="counter-title text-white">Ostvarenih Saradnji</span></div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6  mb-4 mb-md-0">
+                      <div class="counter counter-style-2 h-100">
+                        <div class="counter-number"><span class="timer mb-0" data-to="30" data-speed="2000">30</span><span class="suffix">K+</span></div>
+                        <div class="counter-info"><span class="counter-title text-white">Uspešnih projekata</span></div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                      <div class="counter counter-style-2 h-100">
+                        <div class="counter-number"><span class="timer mb-0" data-to="10" data-speed="2000">10</span><span class="suffix">K+</span></div>
+                        <div class="counter-info"><span class="counter-title text-white">Zadovoljnih klijenata</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+<!--=================================
+          Marquee Slide -->
+          <section class="space-small-ptb overflow-hidden z-index-2 bg-black">
+            <div class="container-fluid g-0 pt-5">
+             <div class="row g-0">
+               <div class="col-md-12">
+                 <div class="marquee-wrapper marquee-border marquee-rotate">
+                   <div class="marquee-inner">
+                     <div class="marquee-item">
+                       <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                       <span class="title">Mreža</span>
+                     </div>
+                     <div class="marquee-item">
+                       <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                       <span class="title">Kontrola Pristupa</span>
+                     </div>
+                     <div class="marquee-item">
+                       <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                       <span class="title">Alarmni sistemi</span>
+                     </div>
+                     <div class="marquee-item">
+                       <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                       <span class="title">Parking sistemi</span>
+                     </div>
+                     <div class="marquee-item">
+                       <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                       <span class="title">Bezbedonosna rešenja</span>
+                     </div>
+                     <div class="marquee-item">
+                      <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                      <span class="title">Mreža</span>
+                    </div>
+                    <div class="marquee-item">
+                      <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                      <span class="title">Kontrola Pristupa</span>
+                    </div>
+                    <div class="marquee-item">
+                      <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                      <span class="title">Alarmni sistemi</span>
+                    </div>
+                    <div class="marquee-item">
+                      <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                      <span class="title">Parking sistemi</span>
+                    </div>
+                    <div class="marquee-item">
+                      <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                      <span class="title">Bezbedonosna rešenja</span>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+          </section>
+         <!--=================================
+         Marquee Slide -->
+            </div>
+          </section>
+          <!--=================================
+          WHAT WE DO -->
+          <!--=================================
+          Awards -->
+          <section class="space-ptb ellipse-top">
+            <div class="container">
+              <div class="row mb-lg-5">
+                <div class="col-xxl-7 col-lg-8">
+                  <div class="section-title mb-lg-0">
+                    <span class="sub-title"><img class="img-fluid" src="images/subtitle-icon.png" alt=""> Naši projekti</span>
+                    <h2 class="title mb-0">Naši najveći projekti</h2>
+                  </div>
+                </div>
+                 <div class="col-xxl-5 col-lg-4 align-self-end">
+                  <p class="mb-0 ps-xxl-5">Od najmanjih do najvećih ideja realizacija je podjednako važna u svemu što zajedno stvaramo. Ponosni smo na sve projekte a u nastavku Vam ističemo par.</p>
+                 </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="awards-wrapper z-index-2 ">
+                    <div class="awards-item">
+                      <div class="item-inner">
+                        <div class="awards-year">[2020]</div>
+                        <div class="awards-city">New York</div>
+                        <h6 class="awards-name">Njujorski metro pristup
+                        </h6>
+                        <div class="awards-action"><a class="btn-arrow" href="#"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_923_139)"><path d="M8.70801 0.959961L9.29825 2.7665C10.2512 5.68321 12.8308 7.77453 15.8928 8.1128C12.8468 8.37564 10.2578 10.4348 9.3276 13.3343L8.70801 15.2657" stroke="inherit" stroke-width="2"/><path d="M15.7602 8.12158H0.1875" stroke="inherit" stroke-width="2"/></g><defs><clipPath id="clip0_923_139"><rect width="15.904" height="14.8437" fill="inherit" transform="translate(0.1875 0.578125)"/></clipPath></defs></svg></a></div>
+                      </div>
+                      <div class="marquee-wrapper">
+                        <div class="marquee-inner">
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                            <span class="title">Mrežna rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                            <span class="title">Softverska Rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                            <span class="title">Digitalni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                            <span class="title">Mrežna rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                            <span class="title">Softverska Rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                            <span class="title">Digitalni Sistemi</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="awards-item">
+                      <div class="item-inner">
+                        <div class="awards-year">[2021]</div>
+                        <div class="awards-city">London</div>
+                        <h6 class="awards-name">Big Ben Rampa</h6>
+                        <div class="awards-action"><a class="btn-arrow" href="#"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_923_140)"><path d="M8.70801 0.959961L9.29825 2.7665C10.2512 5.68321 12.8308 7.77453 15.8928 8.1128C12.8468 8.37564 10.2578 10.4348 9.3276 13.3343L8.70801 15.2657" stroke="inherit" stroke-width="2"/><path d="M15.7602 8.12158H0.1875" stroke="inherit" stroke-width="2"/></g><defs><clipPath id="clip0_923_140"><rect width="15.904" height="14.8437" fill="inherit" transform="translate(0.1875 0.578125)"/></clipPath></defs></svg></a></div>
+                      </div>
+                      <div class="marquee-wrapper">
+                        <div class="marquee-inner">
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                            <span class="title">Mrežna rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                            <span class="title">Softverska Rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                            <span class="title">Digitalni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                            <span class="title">Mrežna rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                            <span class="title">Softverska Rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                            <span class="title">Digitalni Sistemi</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="awards-item">
+                      <div class="item-inner">
+                        <div class="awards-year">[2022]</div>
+                        <div class="awards-city">India</div>
+                        <h6 class="awards-name">Video Nadzor Trga</h6>
+                        <div class="awards-action"><a class="btn-arrow" href="#"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_923_141)"><path d="M8.70801 0.959961L9.29825 2.7665C10.2512 5.68321 12.8308 7.77453 15.8928 8.1128C12.8468 8.37564 10.2578 10.4348 9.3276 13.3343L8.70801 15.2657" stroke="inherit" stroke-width="2"/><path d="M15.7602 8.12158H0.1875" stroke="inherit" stroke-width="2"/></g><defs><clipPath id="clip0_923_141"><rect width="15.904" height="14.8437" fill="inherit" transform="translate(0.1875 0.578125)"/></clipPath></defs></svg></a></div>
+                      </div>
+                      <div class="marquee-wrapper">
+                        <div class="marquee-inner">
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                            <span class="title">Mrežna rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                            <span class="title">Softverska Rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                            <span class="title">Digitalni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                            <span class="title">Mrežna rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                            <span class="title">Softverska Rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                            <span class="title">Digitalni Sistemi</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="awards-item">
+                      <div class="item-inner">
+                        <div class="awards-year">[2023]</div>
+                        <div class="awards-city">Chicago</div>
+                        <h6 class="awards-name">Kontrola Pristupa
+                        </h6>
+                        <div class="awards-action"><a class="btn-arrow" href="#"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_923_142)"><path d="M8.70801 0.959961L9.29825 2.7665C10.2512 5.68321 12.8308 7.77453 15.8928 8.1128C12.8468 8.37564 10.2578 10.4348 9.3276 13.3343L8.70801 15.2657" stroke="inherit" stroke-width="2"/><path d="M15.7602 8.12158H0.1875" stroke="inherit" stroke-width="2"/></g><defs><clipPath id="clip0_923_142"><rect width="15.904" height="14.8437" fill="inherit" transform="translate(0.1875 0.578125)"/></clipPath></defs></svg></a></div>
+                      </div>
+                      <div class="marquee-wrapper">
+                        <div class="marquee-inner">
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                            <span class="title">Mrežna rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                            <span class="title">Softverska Rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                            <span class="title">Digitalni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                            <span class="title">Mrežna rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                            <span class="title">Softverska Rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                            <span class="title">Digitalni Sistemi</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="awards-item">
+                      <div class="item-inner">
+                        <div class="awards-year">[2024]</div>
+                        <div class="awards-city">Shanghai</div>
+                        <h6 class="awards-name">AI prepoznavanje lica</h6>
+                        <div class="awards-action"><a class="btn-arrow" href="#"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_923_143)"><path d="M8.70801 0.959961L9.29825 2.7665C10.2512 5.68321 12.8308 7.77453 15.8928 8.1128C12.8468 8.37564 10.2578 10.4348 9.3276 13.3343L8.70801 15.2657" stroke="inherit" stroke-width="2"/><path d="M15.7602 8.12158H0.1875" stroke="inherit" stroke-width="2"/></g><defs><clipPath id="clip0_923_143"><rect width="15.904" height="14.8437" fill="inherit" transform="translate(0.1875 0.578125)"/></clipPath></defs></svg></a></div>
+                      </div>
+                      <div class="marquee-wrapper">
+                        <div class="marquee-inner">
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                            <span class="title">Mrežna rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                            <span class="title">Softverska Rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                            <span class="title">Digitalni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon1.png" alt="" /></span>
+                            <span class="title">Mrežna rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon2.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon3.png" alt="" /></span>
+                            <span class="title">Softverska Rešenja</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon4.png" alt="" /></span>
+                            <span class="title">Alarmni Sistemi</span>
+                          </div>
+                          <div class="marquee-item">
+                            <span class="icon"><img class="img-fluid" src="images/client-logo/brand-icon5.png" alt="" /></span>
+                            <span class="title">Digitalni Sistemi</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--=================================
+          Awards -->
+          <!--=================================
+          About Info -->
+          <section class="space-pt z-index-2">
+            <div class="container">
+              <div class="row justify-content-between">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                  <div class="section-title pb-0 pb-lg-4">
+                    <span class="sub-title"><img class="img-fluid" src="images/subtitle-icon.png" alt=""> Bezbednost</span>
+                    <h2 class="title"> SAS Security </h2>
+                  </div>
+                   <div class="row">
+                     <div class="col-sm-4">
+                        <img class="img-fluid" src="images/security/hakerred.webp" alt="#">
+                     </div>
+                     <div class="col-sm-8">
+                      <p class="ps-lg-3 mt-4 mt-sm-0">SAS Security nudi inovativne sisteme za zaštitu doma i poslovnih objekata, uključujući alarmne sisteme, video nadzor i kontrolu pristupa. Naša rešenja kombinuju najsavremeniju tehnologiju, intuitivnu mobilnu aplikaciju i profesionalni monitoring centar kako bi vaša sigurnost bila na najvišem nivou. Bilo da želite zaštitu od provale, požara, ili nadzor nad više lokacija, mi smo tu da vam pružimo pouzdanost i mir.</p>
+                     <div class="d-flex justify-content-center mt-5 ms-sm-5 ms-0">
+                       <a class="btn btn-effect" href="security.html">
+                        <span>Više o SAS Security</span>
+                        <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_59_253)"><path d="M19.4854 11.4293L17.0513 12.221C13.1214 13.4993 10.3036 16.9595 9.84784 21.0668C9.49371 16.981 6.71926 13.5081 2.81255 12.2604L0.210283 11.4293" stroke="white" stroke-width="2"/><path d="M9.83594 20.8889L9.83594 0" stroke="white" stroke-width="2"/></g><defs><clipPath id="clip0_59_253"><rect width="21.3333" height="20" fill="white" transform="translate(20) rotate(90)"/></clipPath></defs></svg>
+                       </a>
+                      </div>
+                     </div>
+                   </div>
+                   <div class="row mt-4 mt-sm-5">
+                    <div class="col-sm-6">
+                      <div class="counter counter-style-1">
+                        <div class="counter-number"><span class="timer mb-0" data-to="240" data-speed="2000">240</span><span class="suffix">+</span></div>
+                        <div class="counter-info"><span class="counter-title">Obezbeđenih lokala</span></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="counter counter-style-1">
+                        <div class="counter-number"><span class="timer mb-0" data-to="100" data-speed="2000">100</span><span class="suffix">%</span></div>
+                        <div class="counter-info"><span class="counter-title">Zadovoljnih klijenata</span></div>
+                      </div>
+                    </div>
+                   </div>
+                </div>
+                <div class="col-lg-5">
+                  <img class="img-fluid ps-lg-5" src="images/security/secureVerrt.webp" alt="#">
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--=================================
+          About Info -->
+          <!--=================================
+          About Info -->
+          <section class="space-pt z-index-2">
+            <div class="container">
+              <div class="row justify-content-between">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                  <div class="section-title pb-0 pb-lg-4">
+                    <span class="sub-title"><img class="img-fluid" src="images/subtitle-icon.png" alt=""> Mreža</span>
+                    <h2 class="title"> SAS Network </h2>
+                  </div>
+                   <div class="row">
+                     <div class="col-sm-4">
+                        <img class="img-fluid" src="images/network/swich.jpg" alt="#">
+                     </div>
+                     <div class="col-sm-8">
+                      <p class="ps-lg-3 mt-4 mt-sm-0">SAS Network pruža visokokvalitetna rešenja za mrežnu opremu i infrastrukturu, od rutera i mrežnih prekidača do sigurnosnih sistema poput vatrozidova. Naša rešenja omogućavaju brzo, pouzdano i sigurno povezivanje, idealno za poslovne i stambene objekte. Sa stručnim projektovanjem i implementacijom, garantujemo optimizaciju mrežnih performansi i zaštitu podataka, prilagođavajući svako rešenje vašim potrebama.</p>
+                     <div class="d-flex justify-content-center mt-5 ms-sm-5 ms-0">
+                       <a class="btn btn-effect" href="network.html">
+                        <span>Više o SAS Networku</span>
+                        <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_59_253)"><path d="M19.4854 11.4293L17.0513 12.221C13.1214 13.4993 10.3036 16.9595 9.84784 21.0668C9.49371 16.981 6.71926 13.5081 2.81255 12.2604L0.210283 11.4293" stroke="white" stroke-width="2"/><path d="M9.83594 20.8889L9.83594 0" stroke="white" stroke-width="2"/></g><defs><clipPath id="clip0_59_253"><rect width="21.3333" height="20" fill="white" transform="translate(20) rotate(90)"/></clipPath></defs></svg>
+                       </a>
+                      </div>
+                     </div>
+                   </div>
+                   <div class="row mt-4 mt-sm-5">
+                    <div class="col-sm-6">
+                      <div class="counter counter-style-1">
+                        <div class="counter-number"><span class="timer mb-0" data-to="240" data-speed="2000">240</span><span class="suffix">+</span></div>
+                        <div class="counter-info"><span class="counter-title">Obezbeđenih lokala</span></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="counter counter-style-1">
+                        <div class="counter-number"><span class="timer mb-0" data-to="100" data-speed="2000">100</span><span class="suffix">%</span></div>
+                        <div class="counter-info"><span class="counter-title">Zadovoljnih klijenata</span></div>
+                      </div>
+                    </div>
+                   </div>
+                </div>
+                <div class="col-lg-5">
+                  <img class="img-fluid ps-lg-5" src="images/network/bodekablove.webp" alt="#">
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--=================================
+          About Info -->
+          <!--=================================
+          About Info -->
+          <section class="space-pt z-index-2">
+            <div class="container">
+              <div class="row justify-content-between">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                  <div class="section-title pb-0 pb-lg-4">
+                    <span class="sub-title"><img class="img-fluid" src="images/subtitle-icon.png" alt=""> Kontrola Pristupa</span>
+                    <h2 class="title"> SAS Parking </h2>
+                  </div>
+                   <div class="row">
+                     <div class="col-sm-4">
+                        <img class="img-fluid" src="images/parking/bariera.webp" alt="#">
+                     </div>
+                     <div class="col-sm-8">
+                      <p class="ps-lg-3 mt-4 mt-sm-0">Uz SAS Parking, obezbedite efikasno i bezbedno upravljanje vašim parking prostorima. Naše parking barijere i rampe nude rešenja za pojedinačna mesta ili velike parking objekte, sa lakim daljinskim upravljanjem i dodatnim nivoima sigurnosti. Integracija sa našim sistemima kontrole pristupa omogućava potpunu kontrolu nad pristupom, dok moderno dizajnirana oprema doprinosi organizaciji i redu u svakodnevnom korišćenju.</p>
+                     <div class="d-flex justify-content-center mt-5 ms-sm-5 ms-0">
+                       <a class="btn btn-effect" href="parking.html">
+                        <span>Više o SAS Security</span>
+                        <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_59_253)"><path d="M19.4854 11.4293L17.0513 12.221C13.1214 13.4993 10.3036 16.9595 9.84784 21.0668C9.49371 16.981 6.71926 13.5081 2.81255 12.2604L0.210283 11.4293" stroke="white" stroke-width="2"/><path d="M9.83594 20.8889L9.83594 0" stroke="white" stroke-width="2"/></g><defs><clipPath id="clip0_59_253"><rect width="21.3333" height="20" fill="white" transform="translate(20) rotate(90)"/></clipPath></defs></svg>
+                       </a>
+                      </div>
+                     </div>
+                   </div>
+                   <div class="row mt-4 mt-sm-5">
+                    <div class="col-sm-6">
+                      <div class="counter counter-style-1">
+                        <div class="counter-number"><span class="timer mb-0" data-to="240" data-speed="2000">240</span><span class="suffix">+</span></div>
+                        <div class="counter-info"><span class="counter-title">Obezbeđenih lokala</span></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="counter counter-style-1">
+                        <div class="counter-number"><span class="timer mb-0" data-to="100" data-speed="2000">100</span><span class="suffix">%</span></div>
+                        <div class="counter-info"><span class="counter-title">Zadovoljnih klijenata</span></div>
+                      </div>
+                    </div>
+                   </div>
+                </div>
+                <div class="col-lg-5">
+                  <img class="img-fluid ps-lg-5" src="images/parking/parking.webp" alt="#">
+                </div>
+              </div>
+              <div class="section-title mt-5">
+                <span class="sub-title"><img class="img-fluid" src="images/subtitle-icon.png" alt=""> FAQ</span>
+                <h5 class="title mb-0">Česta pitanja na koja imamo odgovore</h5>
+              </div>
+               <div class="accordion" id="pgsaccordion">
+                <div class="accordion-item">
+                  <h5 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">01. It turned out to be the Hope Diamond?</button>
+                  </h5>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#pgsaccordion">
+                    <div class="accordion-body">Imagine reaching deep inside you for all the strength and wisdom that you need to make this decision today. As you do so, imagine that when you choose to make that decision that deep inside your mind you are switching off the alternative path.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h5 class="accordion-header" id="headingTwo">
+                    <button
+                    class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    02. So why do we do it?
+                    </button>
+                  </h5>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#pgsaccordion">
+                    <div class="accordion-body">Step out on to the path to your left. Where there is no change. Instead, you continue doing what you have in the past. What will life be like about staying on this path. Walk out into your future to the 10 year point.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h5 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">03. I am worried about e-mail scams...</button>
+                  </h5>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#pgsaccordion">
+                    <div class="accordion-body"> Walk out 10 years into your future and feel how it feels to carry on doing the same thing. I want you to think about how you will feel in 10 years if you continue doing the exact same things you have done to date. What will your daily life  be like? </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h5 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">04. Why IT Staff Management?</button>
+                  </h5>
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#pgsaccordion">
+                    <div class="accordion-body">Really experience that. See what you see, hear what you hear, feel the feelings. Notice everything that you need to know about what it will be like if you carry on with the same behaviour, putting off change. Drift back to where the path splits.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--=================================
+          About Info -->
+
+          <!--=================================
+          Video Full Section -->
+          <section class="video-bg-jarallax jarallax mt-5" style="background-image: url(images/bg/bg-3.jpg); background-position: center center; background-size: cover;">
+            <div class="video-wrapper wrapper-absolute">
+              <a class="popup-youtube video-btn cursor-style btn-effect" href="https://www.youtube.com/watch?v=SZEflIVnhH8&t=1s">Play</a>
+            </div>
+          </section>
+          <!--=================================
+          Video Full Section -->
+
+        </div>
+      </div>
+
+      <!--=================================
+      Site Footer -->
+      <footer class="site-footer footer-dark">
+        <div class="footer-main">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-3 col-md-5">
+                <div class="widget widget-address-info">
+                  <h5 class="widget-title">Gde se nalazimo ?</h5>
+                  <ul class="address-info-list">
+                    <li><i class="icon"><img class="img-fluid" src="images/svg/address-info-contacts.svg" alt="" /></i><span class="info"><span>Kneza Ive od Semberije 9</span>Beograd, Srbija</span></li>
+                    <li><i class="icon"><img class="img-fluid" src="images/svg/address-info-headphone.svg" alt="" /></i><span class="info"><span>065 988 6244</span>MON - SAT 09:00h - 17:00h</span></li>
+                    <li><i class="icon"><img class="img-fluid" src="images/svg/address-info-email.svg" alt="" /></i><span class="info"><span>office@sas-security.rs</span>24/7 support</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-5 col-md-7">
+                <div class="widget">
+                  <h5 class="widget-title"> Saznajte sve novosti prvi</h5>
+                  <div class="widget widget-newsletter mb-4 pb-2">
+                    <form class="newsletter-form">
+                      <input type="text" class="form-control" placeholder="Unesite Vašu email adresu">
+                      <button type="submit" class="subscribe-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                  </div>
+                  <div class="widget widget-menu">
+                    <h6 class="widget-title">Bitni Linkovi</h6>
+                    <ul class="list-unstyled list-col-3 mb-0">
+                      <li><a href="security.html">Security</a></li>
+                      <li><a href="network.html">Network</a></li>
+                      <li><a href="parking.html">Parking</a></li>
+                      <li><a href="https://www.sas-security.rs/">Home</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-12 ms-auto">
+                <div class="widget widget-info">
+                  <h5 class="widget-title">Kontakt Telefon</h5>
+                  <a class="number" href="tel:+381659886244">065 988 6244</a>
+                  
+                </div>
+                <div class="widget-socail">
+                  <ul class="socail-icon">
+                    <li><a href="#">Fb</a></li>
+                    <li><a href="#">Dr</a></li>
+                    <li><a href="#">Tw</a></li>
+                    <li><a href="#">Be</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <p>
+                  <a class="footer-logo" href="index.html">
+                    <img
+                      class="img-fluid"
+                      src="images/F & A SolutionsLogo.png"
+                      style="max-width: 15%; margin: 0; padding: 0; display: inline-block;"
+                      alt="logo"
+                    />
+                  </a>
+                </p>
+              </div>
+              <div class="col-lg-6" style="text-align: center;">
+                <p style="margin: 0; line-height: normal;">
+                  Designed by <a href="#">F & A Solutions</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         
+      </footer>
 
-        
-        <br><br><br><br>
-        <button type="submit">Send</button>
-   </form>
-</body>
+      <!--=================================
+      Back To Top -->
+      <div class="back-to-top">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+        </svg>
+      </div>
+
+    </div>
+    <!--=================================
+    Javascript -->
+    <!-- JS Global Compulsory (Do not remove)-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.appear.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+    <script src="js/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/jarallax/jarallax.min.js"></script>
+    <script src="js/jarallax/jarallax-video.min.js"></script>
+    <script src="js/swiper/swiper.min.js"></script>
+    <script src="js/swiperanimation/SwiperAnimation.min.js"></script>
+    <script src="js/shuffle/shuffle.min.js"></script>
+    <script src="js/magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="js/counter/jquery.countTo.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/attractHover.js"></script>
+    <script src="js/custom-select.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/custom.js"></script> <!-- Template Scripts (Do not remove)-->
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('select').niceSelect();
+      });
+    </script>
+  </body>
 </html>
