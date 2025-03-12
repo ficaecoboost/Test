@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+        }
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .raising-menu {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+        }
+        .raising-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .raising-menu li a:hover {
+            color: orange;
+        }
+        .navbar-toggle {
+            display: none;
+            cursor: pointer;
+        }
+        .navbar-toggle i {
+            font-size: 24px;
+            color: #fff;
+        }
+        .search-btn i {
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .searchbar {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 250px;
+        }
+        .searchbar__group {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+        }
+        .searchbar__input {
+            flex: 1;
+            border: none;
+            padding: 5px;
+            outline: none;
+        }
+        .searchbar__close {
+            cursor: pointer;
+            color: #000;
+        }
+        @media (max-width: 768px) {
+            .raising-menu {
+                display: none;
+                flex-direction: column;
+                background: #000;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                padding: 10px;
+                z-index: 999;
+            }
+            .raising-menu.active {
+                display: flex;
+            }
+            .navbar-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header__inner">
+        <div class="header-logo"><a href="home.html">Macbeth doo</a></div>
+        <nav class="raising-nav">
+            <ul class="raising-menu">
+                <li><a href="#id1">Home</a></li>
+                <li><a href="#id2">Kranovi</a></li>
+                <li><a href="#id3">Kamioni</a></li>
+                <li><a href="#id4">Galerija</a></li>
+                <li><a href="#id7">Kontakt</a></li>
+            </ul>
+            <div class="navbar-toggle"><i class="fa fa-bars"></i></div>
+        </nav>
+        <div class="btn-right">
+            <div class="search-btn"><i class="fa fa-search"></i></div>
+        </div>
+        <div class="searchbar">
+            <div class="searchbar__group">
+                <span class="searchbar__addon"><i class="fa fa-search"></i></span>
+                <input class="searchbar__input" type="text" name="search" placeholder="Search" />
+                <span class="searchbar__close">&times;</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const raisingMenu = document.querySelector('.raising-menu');
+    const searchBtn = document.querySelector('.search-btn');
+    const searchBar = document.querySelector('.searchbar');
+    const searchClose = document.querySelector('.searchbar__close');
+
+    navbarToggle.addEventListener('click', () => {
+        raisingMenu.classList.toggle('active');
+    });
+
+    searchBtn.addEventListener('click', () => {
+        searchBar.style.display = 'block';
+    });
+
+    searchClose.addEventListener('click', () => {
+        searchBar.style.display = 'none';
+    });
+</script>
+
+</body>
+</html>
