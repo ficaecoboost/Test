@@ -159,7 +159,7 @@
     }
 
     .raising-menu.show {
-        display: flex;
+        display: block;
     }
 
     .raising-menu li {
@@ -179,6 +179,8 @@
     .navbar-toggle {
         display: block;
     }
+
+    
 }
 
 

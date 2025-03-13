@@ -123,7 +123,7 @@
                 </a>
             </div>
 
-            
+            <!-- Raising Nav -->
 			<!-- Raising Nav -->
 			<nav class="raising-nav">
 				<div class="btn-right">
@@ -134,7 +134,7 @@
 					<li class="current"><a href="#id1">Početak</a></li>
 					<li><a href="#onama">O Nama</a></li>
 					<li class="dropdown">
-						<a href="#">Usluge ▾</a>
+						<a href="#usluge">Usluge ▾</a>
 						<ul class="dropdown-menu">
 							<li><a href="#transport">Transport tereta</a></li>
 							<li><a href="#kran">Usluge kranom</a></li>
@@ -150,25 +150,23 @@
 
 <script>
     // Hamburger menu toggle
-    const navbarToggle = document.querySelector('.navbar-toggle');
-    const raisingMenu = document.querySelector('.raising-menu');
+	const navbarToggle = document.querySelector('.navbar-toggle');
+	const raisingMenu = document.querySelector('.raising-menu');
+	const menuLinks = document.querySelectorAll('.raising-menu a'); // Svi linkovi unutar menija
 
-    navbarToggle.addEventListener('click', () => {
-        raisingMenu.classList.toggle('active');
-    });
+	// Otvara/zatvara meni kada se klikne na dugme
+	navbarToggle.addEventListener('click', () => {
+		raisingMenu.classList.toggle('active');
+		menuLinks.classList.toggle('active');
+	});
 
-    // Search bar toggle
-    const searchBtn = document.querySelector('.search-btn');
-    const searchBar = document.querySelector('.searchbar');
-    const searchClose = document.querySelector('.searchbar__close');
+	// Zatvara meni kada se klikne na neki link
+		menuLinks.forEach(link => {
+			link.addEventListener('click', () => {
+				raisingMenu.classList.remove('active');
+			});
+		});
 
-    searchBtn.addEventListener('click', () => {
-        searchBar.style.display = 'block';
-    });
-
-    searchClose.addEventListener('click', () => {
-        searchBar.style.display = 'none';
-    });
 </script>
 
 			
