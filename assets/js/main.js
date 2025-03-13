@@ -13,13 +13,6 @@ document.querySelectorAll('.dropdown > a').forEach(function (dropdown) {
         this.parentElement.classList.toggle('active');
     });
 });
-document.querySelectorAll('.raising-menu').forEach(function (raisingmenu) {
-    dropdown.addEventListener('click', function (event) {
-        event.preventDefault();
-        this.parentElement.classList.toggle('active');
-    });
-});
-
 
 /**
  * [isMobile description]
