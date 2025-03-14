@@ -2,9 +2,35 @@
 "use strict";
 
 
-document.querySelector('.navbar-toggle').addEventListener('click', function () {
-    document.querySelector('.raising-menu').classList.toggle('show');
+$('.raising-menu li a').on('click', function() {
+    $('.page-wrap').removeClass('active'); // Zatvori meni
+    $('.raising-menu').removeClass('active'); // Ukloni klasu active iz menija
+    $('.navbar-toggle').removeClass('active'); // Resetuj dugme menija
 });
+
+document.addEventListener('click', function (e) {
+    // Klik na "Usluge" (za mobilne)
+    if (e.target.closest('.raising-menu .dropdown > a')) {
+        if (window.innerWidth < 1200) {
+            e.preventDefault();
+            e.target.nextElementSibling.classList.toggle('dropdown-active');
+        }
+    }
+
+    // Klik na strelicu pored "Usluge"
+    if (e.target.classList.contains('submenu-toggle')) {
+        e.preventDefault();
+        e.target.nextElementSibling.classList.toggle('dropdown-active');
+    }
+
+    // Zatvaranje svih submenu-a kada klikneš na neki link u meniju
+    if (e.target.closest('.raising-menu li a') && !e.target.classList.contains('submenu-toggle')) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.classList.remove('dropdown-active');
+        });
+    }
+});
+
 
 // Aktivacija dropdown menija na klik (za mobilne)
 document.querySelectorAll('.dropdown > a').forEach(function (dropdown) {
@@ -292,6 +318,25 @@ $('.gallery-wrap').each(function() {
         }
     }
 })
+
+$(document).ready(function() {
+    $('.gallery__overlay').magnificPopup({
+        type: 'image',
+        mainClass: 'mfp-zoom-in',
+        closeOnContentClick: false,
+        closeOnBgClick: false,
+        showCloseBtn: false, // Sakrivamo default X
+        callbacks: {
+            open: function() {
+                $('.mfp-content').append('<button class="mfp-close-custom">&times;</button>');
+                $('.mfp-close-custom').on('click', function() {
+                    $.magnificPopup.close();
+                });
+            }
+        }
+    });
+});
+
 
 
 
