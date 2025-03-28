@@ -247,7 +247,7 @@
 									
 									<!-- quote-02 -->
 									<blockquote class="quote-02 about-quote">
-										<p class="quote-02__text">Sa dugogodišnjim iskustvom, vrhunskom opremom i posvećenim timom stručnjaka, Macbeth DOO pruža pouzdane usluge transporta svih vrsta, garantujući sigurnost, efikasnost i najviši nivo profesionalizma u svakom projektu.</p>
+										<p class="quote-02__text">Sa dugogodišnjim iskustvom, vrhunskom opremom i posvećenim timom stručnjaka, Macbeth DOO pruža pouzdane usluge transporta teških i vangabaritnih tereta, pretovara i instalacije industrijske opreme, garantujući sigurnost, efikasnost i najviši nivo profesionalizma u svakom projektu.</p>
 										
 										<!-- authorbox -->
 										<div class="authorbox">
@@ -591,87 +591,6 @@
 					to { transform: translateX(-50%); }
 				}
 				</style>
-				<script>
-					document.addEventListener("DOMContentLoaded", function () {
-						const carousel = document.querySelector(".partner-carousel");
-						const wrapper = document.querySelector(".partner-carousel-wrapper");
-					
-						// Kloniramo sve slike za beskonačno pomeranje
-						carousel.innerHTML += carousel.innerHTML;
-						let items = document.querySelectorAll(".partner-item");
-					
-						let scrollSpeed = 1;
-						let isDragging = false;
-						let startX, scrollLeft;
-						let velocity = 0;
-						let animationFrame;
-					
-						function moveSlider() {
-							if (!isDragging) {
-								wrapper.scrollLeft += scrollSpeed;
-								if (wrapper.scrollLeft >= carousel.scrollWidth / 2) {
-									wrapper.scrollLeft = 0;
-								}
-							}
-							animationFrame = requestAnimationFrame(moveSlider);
-						}
-					
-						function stopAutoScroll() {
-							cancelAnimationFrame(animationFrame);
-						}
-					
-						function startAutoScroll() {
-							animationFrame = requestAnimationFrame(moveSlider);
-						}
-					
-						// Pokreće se kada korisnik počne prevlačenje
-						wrapper.addEventListener("mousedown", (e) => {
-							isDragging = true;
-							startX = e.pageX;
-							scrollLeft = wrapper.scrollLeft;
-							stopAutoScroll();
-							wrapper.style.cursor = "grabbing";
-						});
-					
-						wrapper.addEventListener("mouseup", () => {
-							isDragging = false;
-							wrapper.style.cursor = "grab";
-							startAutoScroll();
-						});
-					
-						wrapper.addEventListener("mousemove", (e) => {
-							if (!isDragging) return;
-							let deltaX = e.pageX - startX;
-							wrapper.scrollLeft = scrollLeft - deltaX;
-						});
-					
-						// Touch podrška
-						wrapper.addEventListener("touchstart", (e) => {
-							isDragging = true;
-							startX = e.touches[0].pageX;
-							scrollLeft = wrapper.scrollLeft;
-							stopAutoScroll();
-						});
-					
-						wrapper.addEventListener("touchend", () => {
-							isDragging = false;
-							startAutoScroll();
-						});
-					
-						wrapper.addEventListener("touchmove", (e) => {
-							if (!isDragging) return;
-							let deltaX = e.touches[0].pageX - startX;
-							wrapper.scrollLeft = scrollLeft - deltaX;
-						});
-					
-						// Pokreni beskonačno pomeranje
-						startAutoScroll();
-					});
-				</script>
-	
-	
-
-					
 				
 				
 				<!-- Section -->
