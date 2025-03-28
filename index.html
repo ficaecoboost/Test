@@ -75,7 +75,7 @@
 			"addressCountry": "RS"
 		  },
 		  "url": "https://www.macbethdoo.com/",
-		  "description": "Prevoz teških i vangabaritnih tereta, specijalni transport, usluge kranom, instalacija industrijske opreme. Posvećenost kvalitetu i bezbednosti na radu. kamioni, kran, gradnja, zgrade, stakla"
+		  "description": "Prevoz teških i vangabaritnih tereta, specijalni transport, usluge kranom, instalacija industrijske opreme. Posvećenost kvalitetu i bezbednosti na radu."
 		}
 		</script>
 		
@@ -514,28 +514,31 @@
 										<img src="assets/img/logo slider/tvpEko.png" alt="TVP Eko">
 									</div>
 									<div class="partner-item">
-										<img src="assets/img/logo slider/neimar.png" alt="Neimar MN">
+										<img src="assets/img/logo slider/neimarMN.jpg" alt="Neimar MN">
 									</div>
 									<div class="partner-item">
 										<img src="assets/img/logo slider/bkTesla.png" alt="BK Tesla">
 									</div>
+									<!-- DUPLIRANO RADI BESKONACNOG PONAVLJANJA -->
 									<div class="partner-item">
-										<img src="assets/img/logo slider/ostrog.png" alt="Ostrog">
+										<img src="assets/img/logo slider/cryoGas.png" alt="Cryo Gas">
 									</div>
 									<div class="partner-item">
-										<img src="assets/img/logo slider/colourfull.png" alt="Colourfull">
+										<img src="assets/img/logo slider/energoGroup.png" alt="Energo Group">
+									</div>
+									
+										
+									<div class="partner-item">
+										<img src="assets/img/logo slider/zelezniceSrbije.png" alt="Železnice Srbije">
 									</div>
 									<div class="partner-item">
-										<img src="assets/img/logo slider/lidertrailer.jpg" alt="Lidertrailer">
+										<img src="assets/img/logo slider/tvpEko.png" alt="TVP Eko">
 									</div>
 									<div class="partner-item">
-										<img src="assets/img/logo slider/gia_logo_main.png" alt="Gia">
+										<img src="assets/img/logo slider/neimarMN.jpg" alt="Neimar MN">
 									</div>
 									<div class="partner-item">
-										<img src="assets/img/logo slider/PNEUTECH-ZVANIČNI-LOGO.png" alt="Pneutech">
-									</div>
-									<div class="partner-item">
-										<img src="assets/img/logo slider/mottologo-1.png" alt="Motto">
+										<img src="assets/img/logo slider/bkTesla.png" alt="BK Tesla">
 									</div>
 								</div>
 							</div>
@@ -553,40 +556,30 @@
 				}
 				.partner-carousel-wrapper {
 					width: 100%;
-					overflow-x: auto;
-					overflow-y: hidden;
-					scroll-behavior: auto;
-					-webkit-overflow-scrolling: touch;
-					scrollbar-width: none;
+					overflow: hidden;
 				}
-
 				.partner-carousel {
 					display: flex;
 					white-space: nowrap;
 					gap: 20px;
-					cursor: grab;
+					animation: slide 15s linear infinite;
 				}
-
-
 				.partner-item {
 					flex: 0 0 auto;
 					width: 150px;
-					height: 100px; /* Postavljamo fiksnu visinu za sve stavke */
-					display: flex;
-					align-items: center; /* Vertikalno centriranje */
-					justify-content: center; /* Horizontalno centriranje */
 				}
-
 				.partner-item img {
-					max-width: 100%;
-					max-height: 100%; /* Ograničava visinu slike da stane unutar partner-item */
-					object-fit: contain; /* Sprečava seckanje slika */
+					width: 100%;
+					filter: grayscale(100%);
+					transition: 0.3s;
 				}
-
 				.partner-item img:hover {
 					filter: grayscale(0%);
 				}
-				
+				@keyframes slide {
+					from { transform: translateX(0); }
+					to { transform: translateX(-50%); }
+				}
 				</style>
 				
 				
