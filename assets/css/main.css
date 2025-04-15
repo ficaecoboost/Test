@@ -122,6 +122,12 @@
     .dropdown:hover .dropdown-menu {
         display: block;
     }
+
+
+
+    .header-logo{
+        width: 40%;
+    }
 }
 
 
